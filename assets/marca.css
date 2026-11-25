@@ -1,0 +1,71 @@
+/*
+ * Marca LJ Gaming (05/11/2026).
+ * Logo em letras de bloco (assets/marca/), títulos, preços e botões em Russo One,
+ * dourado #2f7bff como único acento. Carregado por último: para voltar ao visual
+ * anterior, basta tirar o <link> deste arquivo e trocar as imagens da logo.
+ */
+:root {
+  --display: "Russo One", var(--f);
+  --marca-ouro: #2f7bff;
+  --marca-tinta: #0b1220;
+}
+
+/* Logo no topo e no rodapé */
+.tb-brand img {
+  width: auto;
+  height: 32px;
+  border-radius: 0;
+}
+.tb-brand span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.foot-brand img {
+  width: auto;
+  height: 28px;
+  border-radius: 0;
+}
+
+/* Títulos na letra da marca. Russo One só tem um peso: nada de negrito falso. */
+h1,
+h2,
+.ph h1,
+.sec-head h2 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-synthesis: none;
+  letter-spacing: -.01em;
+}
+.ph h1 {
+  font-size: clamp(30px, 4.6vw, 52px);
+  line-height: 1.08;
+}
+.sec-head h2 {
+  font-size: clamp(26px, 3.6vw, 40px);
+  line-height: 1.1;
+}
+
+/* Preços e botões de compra */
+.buybox-new,
+.ed-new,
+.conta-total b,
+.conta-vs-price b {
+  font-family: var(--display);
+  font-weight: 400;
+  font-synthesis: none;
+  letter-spacing: 0;
+}
+.offer-btn {
+  font-family: var(--display);
+  font-weight: 400;
+  font-synthesis: none;
+  letter-spacing: .01em;
+}
+
+@media (max-width: 640px) {
+  .ph h1 { font-size: 28px; line-height: 1.12; }
+}

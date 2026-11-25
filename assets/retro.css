@@ -1,0 +1,135 @@
+/* Seção "Novo: jogos retrô" — segue os tokens de tema.css (fundo claro, destaque dourado). */
+
+.retro-new {
+  position: relative;
+  overflow: hidden;
+}
+
+.retro-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  margin-bottom: .85rem;
+  padding: .35rem .8rem;
+  border-radius: 999px;
+  background: var(--deal-bg);
+  color: var(--deal-tx);
+  font-weight: 700;
+  font-size: .82rem;
+}
+
+.retro-badge::before {
+  content: "";
+  width: .5rem;
+  height: .5rem;
+  border-radius: 50%;
+  background: var(--buy);
+  box-shadow: 0 0 0 4px var(--neon-glow);
+}
+
+.retro-num {
+  color: var(--buy2);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Parede de capas: fileiras que deslizam devagar em sentidos opostos. */
+.retro-wall {
+  display: grid;
+  gap: 14px;
+  margin: 2rem 0 1.75rem;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.retro-row {
+  display: flex;
+  gap: 14px;
+  width: max-content;
+  animation: retro-slide 48s linear infinite;
+}
+
+.retro-row.rev {
+  animation-direction: reverse;
+  animation-duration: 56s;
+}
+
+.retro-row img {
+  height: 168px;
+  width: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 24px -10px rgba(25, 34, 45, .45), 0 0 0 1px var(--line);
+  background: var(--panel3);
+}
+
+@keyframes retro-slide {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .retro-row { animation: none; }
+}
+
+/* Marcas: chips com a cor de cada família, igual ao launcher. */
+.retro-fams {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 12px;
+}
+
+.retro-fam {
+  padding: 1rem 1.1rem;
+  border-radius: var(--r);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
+}
+
+.retro-fam b {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: .35rem;
+  color: var(--txt);
+  font-size: 1.02rem;
+}
+
+.retro-fam b::before {
+  content: "";
+  width: .6rem;
+  height: .6rem;
+  border-radius: 50%;
+  background: var(--fam);
+}
+
+.retro-fam span {
+  color: var(--dim);
+  font-size: .9rem;
+  line-height: 1.45;
+}
+
+.retro-note {
+  margin-top: 1.25rem;
+  text-align: center;
+  color: var(--txt2);
+}
+
+.retro-note strong {
+  color: var(--txt);
+}
+
+/* Aviso de preço na oferta */
+.ed-alert {
+  margin: .6rem 0 .2rem;
+  padding: .55rem .8rem;
+  border-radius: 12px;
+  background: var(--deal-bg);
+  color: var(--deal-tx);
+  font-size: .88rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .retro-row img { height: 128px; }
+}

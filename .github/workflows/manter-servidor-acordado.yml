@@ -1,0 +1,15 @@
+# Mantém o servidor de licenças do LJ Gaming acordado.
+# No plano grátis do Render o servidor "dorme" após ~15 min sem uso e leva 20-50 s para acordar;
+# o launcher desiste antes disso e a ativação da key dá erro. Este alarme chama o servidor a cada 10 min.
+name: Manter servidor acordado
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Chamar o servidor
+        run: curl -fsS --max-time 90 --retry 2 https://ljgaming-license-service.onrender.com/health

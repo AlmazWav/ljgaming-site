@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LJ Gaming | O Maior Launcher de Consoles para PC (PS2, PS3, Xbox 360, Xbox)</title>
+<meta name="description" content="Jogue os maiores clássicos de PlayStation 2, PS3, PS4, Xbox Clássico, Xbox 360 e Xbox One no seu PC em 1 clique. Sem emuladores complicados e sem vírus. Pagamento único no PIX.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="assets/marca/ljgaming-favicon.svg">
+<link rel="apple-touch-icon" href="assets/marca/apple-touch-icon.png">
+<meta name="theme-color" content="#f4f5f7">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Russo+One&display=swap">
+<!--
+  Estrutura nova em 04/11/2026: e a mesma pagina de vendas da LJ Gaming
+  (ljgaming.com.br), no tema branco, com o conteudo do LJ Gaming.
+  loja.css e tema.css sao copias do CSS de la com o verde trocado pelo dourado;
+  o que e so do LJ Gaming fica em ljgaming.css. A versao anterior (escura, com o
+  simulador do launcher) esta em index.pre-estrutura-ljgaming.html.
+-->
+<link rel="stylesheet" href="assets/loja.css?v=1">
+<link rel="stylesheet" href="assets/tema.css?v=1">
+<link rel="stylesheet" href="assets/retro.css?v=1">
+<link rel="stylesheet" href="assets/ljgaming.css?v=1">
+<link rel="stylesheet" href="assets/marca.css?v=1">
+<script>
+var io = (function(){
+  if(!('IntersectionObserver' in window)) return { observe:function(el){ el.classList.add('visible'); } };
+  var obs = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ obs.unobserve(e.target); e.target.classList.add('visible'); } });
+  },{threshold:.05,rootMargin:'0px 0px -40px 0px'});
+  return obs;
+})();
+</script>
+</head>
+<body>
+
+<!-- ===================== TOPO ===================== -->
+<header class="topbar">
+  <div class="topbar-in">
+    <a href="#top" class="tb-brand">
+      <img src="assets/marca/ljgaming-horizontal-branco.svg" alt="LJ Gaming">
+      <span>LJ Gaming</span>
+    </a>
+  </div>
+</header>
+
+<main id="top">
+<section class="ph">
+  <div class="wrap">
+
+    <div class="ph-crumb">LJ Gaming &nbsp;›&nbsp; <b>Launcher de consoles para PC</b></div>
+    <h1>Os clássicos do PS2, PS3, Xbox 360 e mais de 5.700 jogos retrô no seu PC, prontos para jogar</h1>
+
+    <div class="pg">
+
+      <!-- arte + miniaturas. As capas sao verticais (caixa do jogo), por isso cada
+           slide tem a propria capa desfocada no fundo. data-tag = console. -->
+      <div class="art reveal">
+        <div class="art-stage" id="art-stage"></div>
+        <div class="art-thumbs" id="art-thumbs"></div>
+      </div>
+
+      <!-- ficha tecnica + caixa de compra -->
+      <aside class="side">
+
+        <div class="side-card">
+          <p class="side-desc">
+            O LJ Gaming junta seis consoles e mais de 5.700 jogos retrô em um só launcher. Você escolhe o jogo pela capa, conecta o controle e joga. Sem configurar emulador e sem procurar arquivo em site duvidoso.
+          </p>
+          <dl class="spec">
+            <div class="spec-row"><dt>Consoles</dt><dd>PS2, PS3, PS4, Xbox, Xbox 360 e Xbox One</dd></div>
+            <div class="spec-row"><dt>Instalação</dt><dd class="ok">Automática, sem configurar nada</dd></div>
+            <div class="spec-row"><dt>Controles</dt><dd>Xbox, DualSense, DualShock 4 e USB</dd></div>
+            <div class="spec-row"><dt>Imagem</dt><dd>Até 4K a 60 FPS, conforme o seu PC</dd></div>
+            <div class="spec-row"><dt>Saves</dt><dd>Memory cards ilimitados</dd></div>
+            <div class="spec-row"><dt>Garantia</dt><dd>30 dias</dd></div>
+          </dl>
+        </div>
+
+        <div class="buybox">
+          <div class="buybox-top">
+            <span class="buybox-prices">
+              <span class="buybox-from">acesso vitalício: 6 consoles + retrô</span>
+              <span class="buybox-new num">R$ 69,97</span>
+              <span class="buybox-once">Pagamento único · sem mensalidade</span>
+            </span>
+          </div>
+          <a href="https://ggcheckout.app/checkout/v5/PREENCHER-CHECKOUT-LJ"
+             onclick="checkout('https://ggcheckout.app/checkout/v5/PREENCHER-CHECKOUT-LJ',69.97);return false;"
+             class="offer-btn">Comprar o LJ Gaming</a>
+          <a href="#feedbacks" class="hero-proof-link">Veja o que nossos clientes estão falando <span aria-hidden="true">↓</span></a>
+          <div class="buybox-pay">Pagamento no <b>PIX</b>, chave na hora</div>
+          <div class="buybox-terms">Pagamento único · sem mensalidade · sem renovação</div>
+          <div class="medos">
+            <div class="medo">
+              <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
+              <span class="medo-txt">
+                <span class="medo-q">Meu PC aguenta?</span>
+                <span class="medo-a">PS2 e Xbox rodam em qualquer PC comum. O LJ Gaming detecta a sua máquina e ajusta a resolução sozinho.</span>
+              </span>
+            </div>
+            <div class="medo">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>
+              <span class="medo-txt">
+                <span class="medo-q">Preciso mexer em BIOS ou emulador?</span>
+                <span class="medo-a">Não. Você clica no jogo e ele abre pronto, no controle ou no teclado.</span>
+              </span>
+            </div>
+            <div class="medo">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+              <span class="medo-txt">
+                <span class="medo-q">Tem mensalidade?</span>
+                <span class="medo-a">Não. São R$ 69,97 uma vez só, e o acesso é seu para sempre.</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="side-note">Já comprou? <a href="https://ljgaming-license-service.onrender.com/membros" style="color:var(--blue)">Entrar na área de membros</a></div>
+
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== QUANTO CUSTAM OS CONSOLES ===================== -->
+<section class="sec" id="conta">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Quanto custam os seis consoles?</h2>
+      <p>Preços médios de aparelhos usados no Mercado Livre e na OLX.</p>
+    </div>
+    <div class="conta reveal">
+      <div class="conta-cart">
+        <div class="conta-cart-hd">Consoles usados</div>
+        <div class="conta-row">
+          <img class="cons-foto" src="assets/ps2-console.png" alt="PlayStation 2" loading="lazy" decoding="async">
+          <span class="conta-nome">PlayStation 2<small>o console mais vendido da história</small></span>
+          <span class="conta-preco num">R$ 450</span>
+        </div>
+        <div class="conta-row">
+          <img class="cons-foto" src="assets/ps3-console.png" alt="PlayStation 3" loading="lazy" decoding="async">
+          <span class="conta-nome">PlayStation 3</span>
+          <span class="conta-preco num">R$ 850</span>
+        </div>
+        <div class="conta-row">
+          <img class="cons-foto" src="assets/xbox360-console.png" alt="Xbox 360" loading="lazy" decoding="async">
+          <span class="conta-nome">Xbox 360</span>
+          <span class="conta-preco num">R$ 750</span>
+        </div>
+        <div class="conta-row">
+          <img class="cons-foto" src="assets/xbox-original-console.png" alt="Xbox" loading="lazy" decoding="async">
+          <span class="conta-nome">Xbox</span>
+          <span class="conta-preco num">R$ 700</span>
+        </div>
+        <div class="conta-row">
+          <img class="cons-foto" src="assets/ps4-console.png" alt="PlayStation 4" loading="lazy" decoding="async">
+          <span class="conta-nome">PlayStation 4</span>
+          <span class="conta-preco num">R$ 1.500</span>
+        </div>
+        <div class="conta-row">
+          <img class="cons-foto" src="assets/xboxone-console.png" alt="Xbox One" loading="lazy" decoding="async">
+          <span class="conta-nome">Xbox One</span>
+          <span class="conta-preco num">R$ 1.200</span>
+        </div>
+        <div class="conta-total">
+          <span>Total dos consoles</span>
+          <b class="num">R$ 5.450</b>
+        </div>
+        <div class="conta-obs">E isso sem contar os jogos em disco, os leitores que param de ler e a pilha de fios e fontes na sala.</div>
+      </div>
+      <div class="conta-vs">
+        <div class="conta-vs-lbl">No LJ Gaming, uma vez só</div>
+        <div class="conta-vs-price">
+          <b class="num">R$ 69,97</b>
+          <span>e acabou</span>
+        </div>
+        <p class="conta-vs-sub">
+          Os seis consoles no seu PC por pagamento único. São <strong>R$ 5.382 a menos</strong> do que comprar os aparelhos usados.
+        </p>
+        <a href="#consoles" class="btn-ghost">Ver os consoles</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SEIS CONSOLES ===================== -->
+<section class="sec" id="consoles">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Seis consoles em um só launcher</h2>
+      <p>Cada console tem sua aba no LJ Gaming, com os jogos já configurados para rodar melhor que no aparelho original.</p>
+    </div>
+
+    <div class="cresce reveal">
+      <div class="cresce-card">
+        <img class="cons-foto" src="assets/ps2-console.png" alt="PlayStation 2" loading="lazy" decoding="async">
+        <div class="cresce-txt">
+          <span class="cresce-nome">PlayStation 2</span>
+          <span class="cresce-dt">No aparelho, 480i.</span>
+          <span class="cresce-ok"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>No LJ Gaming, até 4K</span>
+          <span class="cresce-jogos"><b>Alguns jogos:</b> God of War 1 e 2, GTA San Andreas, GTA Vice City, Star Wars Battlefront II, Resident Evil 4</span>
+        </div>
+      </div>
+      <div class="cresce-card">
+        <img class="cons-foto" src="assets/ps3-console.png" alt="PlayStation 3" loading="lazy" decoding="async">
+        <div class="cresce-txt">
+          <span class="cresce-nome">PlayStation 3</span>
+          <span class="cresce-dt">No aparelho, 720p a 30 FPS.</span>
+          <span class="cresce-ok"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>No LJ Gaming, 1080p a 60 FPS</span>
+          <span class="cresce-jogos"><b>Alguns jogos:</b> The Last of Us, Uncharted 2, GTA V, LEGO Batman 2, Resident Evil 5</span>
+        </div>
+      </div>
+      <div class="cresce-card">
+        <img class="cons-foto" src="assets/xbox360-console.png" alt="Xbox 360" loading="lazy" decoding="async">
+        <div class="cresce-txt">
+          <span class="cresce-nome">Xbox 360</span>
+          <span class="cresce-dt">No aparelho, 720p com quedas.</span>
+          <span class="cresce-ok"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>No LJ Gaming, 1080p estável</span>
+          <span class="cresce-jogos"><b>Alguns jogos:</b> Red Dead Redemption, Skate 3, Midnight Club Los Angeles, Forza Horizon 2</span>
+        </div>
+      </div>
+      <div class="cresce-card">
+        <img class="cons-foto" src="assets/xbox-original-console.png" alt="Xbox" loading="lazy" decoding="async">
+        <div class="cresce-txt">
+          <span class="cresce-nome">Xbox</span>
+          <span class="cresce-dt">No aparelho, 480p em 4:3.</span>
+          <span class="cresce-ok"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>No LJ Gaming, HD em tela cheia</span>
+          <span class="cresce-jogos"><b>Alguns jogos:</b> Halo: Combat Evolved, Halo 2, Forza Motorsport, Ninja Gaiden Black</span>
+        </div>
+      </div>
+      <div class="cresce-card">
+        <img class="cons-foto" src="assets/ps4-console.png" alt="PlayStation 4" loading="lazy" decoding="async">
+        <div class="cresce-txt">
+          <span class="cresce-nome">PlayStation 4</span>
+          <span class="cresce-dt">Exclusivos da geração passada.</span>
+          <span class="cresce-ok"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Sem comprar o console</span>
+          <span class="cresce-jogos"><b>Alguns jogos:</b> Uncharted: The Nathan Drake Collection, inFAMOUS Second Son, The Last Guardian</span>
+        </div>
+      </div>
+      <div class="cresce-card">
+        <img class="cons-foto" src="assets/xboxone-console.png" alt="Xbox One" loading="lazy" decoding="async">
+        <div class="cresce-txt">
+          <span class="cresce-nome">Xbox One</span>
+          <span class="cresce-dt">Os mundos abertos da oitava geração.</span>
+          <span class="cresce-ok"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Sem comprar o console</span>
+          <span class="cresce-jogos"><b>Alguns jogos:</b> Forza Horizon 4, Sunset Overdrive, Gears 5, Halo 5</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cresce-cta reveal">
+      <p>Jogos novos entram no launcher sem custo extra.</p>
+      <a href="#biblioteca" class="btn-ghost">Ver os jogos</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== NOVO: RETRO ===================== -->
+<!-- Jogos retrô adicionados na versão 0.4.0 (13/11/2026): 5.788 jogos em 45 sistemas,
+     abertos pelo RetroArch dentro do launcher. Capas em assets/retro. -->
+<section class="sec retro-new" id="retro">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="retro-badge">Novidade da versão 0.4.0</span>
+      <h2>Chegaram <span class="retro-num">mais de 5.700</span> jogos retrô</h2>
+      <p>Super Nintendo, Mega Drive, Nintendo 64, Game Boy, Neo Geo, fliperama e muito mais. Já vêm no seu acesso, sem pagar nada a mais.</p>
+    </div>
+    <div class="retro-wall reveal" aria-label="Alguns jogos retrô">
+      <div class="retro-row"><img src="assets/retro/snes-super-mario-world-usa.jpg" alt="Super Mario World" loading="lazy" decoding="async"><img src="assets/retro/megadrive-sonic-the-hedgehog-2-world.jpg" alt="Sonic The Hedgehog 2" loading="lazy" decoding="async"><img src="assets/retro/n64-super-mario-64-europe-en-fr-de.jpg" alt="Super Mario 64" loading="lazy" decoding="async"><img src="assets/retro/snes-street-fighter-ii-usa.jpg" alt="Street Fighter II" loading="lazy" decoding="async"><img src="assets/retro/n64-mario-kart-64-europe-rev-a.jpg" alt="Mario Kart 64" loading="lazy" decoding="async"><img src="assets/retro/snes-donkey-kong-country-usa.jpg" alt="Donkey Kong Country" loading="lazy" decoding="async"><img src="assets/retro/gbc-pokemon-crystal-version-usa-europe-rev-a.jpg" alt="Pokémon: Crystal Version" loading="lazy" decoding="async"><img src="assets/retro/megadrive-streets-of-rage-2-usa.jpg" alt="Streets of Rage 2" loading="lazy" decoding="async"><img src="assets/retro/n64-legend-of-zelda-the-majora-s-mask-europe-en-fr-de-es-rev-a.jpg" alt="Legend of Zelda : Majora&#x27;s Mask, The" loading="lazy" decoding="async"><img src="assets/retro/snes-super-mario-world-usa.jpg" aria-hidden="true" alt="Super Mario World" loading="lazy" decoding="async"><img src="assets/retro/megadrive-sonic-the-hedgehog-2-world.jpg" aria-hidden="true" alt="Sonic The Hedgehog 2" loading="lazy" decoding="async"><img src="assets/retro/n64-super-mario-64-europe-en-fr-de.jpg" aria-hidden="true" alt="Super Mario 64" loading="lazy" decoding="async"><img src="assets/retro/snes-street-fighter-ii-usa.jpg" aria-hidden="true" alt="Street Fighter II" loading="lazy" decoding="async"><img src="assets/retro/n64-mario-kart-64-europe-rev-a.jpg" aria-hidden="true" alt="Mario Kart 64" loading="lazy" decoding="async"><img src="assets/retro/snes-donkey-kong-country-usa.jpg" aria-hidden="true" alt="Donkey Kong Country" loading="lazy" decoding="async"><img src="assets/retro/gbc-pokemon-crystal-version-usa-europe-rev-a.jpg" aria-hidden="true" alt="Pokémon: Crystal Version" loading="lazy" decoding="async"><img src="assets/retro/megadrive-streets-of-rage-2-usa.jpg" aria-hidden="true" alt="Streets of Rage 2" loading="lazy" decoding="async"><img src="assets/retro/n64-legend-of-zelda-the-majora-s-mask-europe-en-fr-de-es-rev-a.jpg" aria-hidden="true" alt="Legend of Zelda : Majora&#x27;s Mask, The" loading="lazy" decoding="async"></div>
+      <div class="retro-row rev"><img src="assets/retro/snes-mega-man-x-usa.jpg" alt="Mega Man X" loading="lazy" decoding="async"><img src="assets/retro/nes-super-mario-bros-3-usa.jpg" alt="Super Mario Bros. 3" loading="lazy" decoding="async"><img src="assets/retro/megadrive-mortal-kombat-world.jpg" alt="Mortal Kombat" loading="lazy" decoding="async"><img src="assets/retro/n64-banjo-kazooie-europe-en-fr-de.jpg" alt="Banjo-Kazooie" loading="lazy" decoding="async"><img src="assets/retro/snes-contra-iii-the-alien-wars-usa.jpg" alt="Contra III : The Alien Wars" loading="lazy" decoding="async"><img src="assets/retro/mastersystem-alex-kidd-in-shinobi-world-usa-europe.jpg" alt="Alex Kidd in Shinobi World" loading="lazy" decoding="async"><img src="assets/retro/gba-castlevania-circle-of-the-moon-usa.jpg" alt="Castlevania : Circle of the Moon" loading="lazy" decoding="async"><img src="assets/retro/fbneo-captcomm.jpg" alt="Captain Commando" loading="lazy" decoding="async"><img src="assets/retro/mame-mspacman.jpg" alt="Ms. Pac-man" loading="lazy" decoding="async"><img src="assets/retro/snes-mega-man-x-usa.jpg" aria-hidden="true" alt="Mega Man X" loading="lazy" decoding="async"><img src="assets/retro/nes-super-mario-bros-3-usa.jpg" aria-hidden="true" alt="Super Mario Bros. 3" loading="lazy" decoding="async"><img src="assets/retro/megadrive-mortal-kombat-world.jpg" aria-hidden="true" alt="Mortal Kombat" loading="lazy" decoding="async"><img src="assets/retro/n64-banjo-kazooie-europe-en-fr-de.jpg" aria-hidden="true" alt="Banjo-Kazooie" loading="lazy" decoding="async"><img src="assets/retro/snes-contra-iii-the-alien-wars-usa.jpg" aria-hidden="true" alt="Contra III : The Alien Wars" loading="lazy" decoding="async"><img src="assets/retro/mastersystem-alex-kidd-in-shinobi-world-usa-europe.jpg" aria-hidden="true" alt="Alex Kidd in Shinobi World" loading="lazy" decoding="async"><img src="assets/retro/gba-castlevania-circle-of-the-moon-usa.jpg" aria-hidden="true" alt="Castlevania : Circle of the Moon" loading="lazy" decoding="async"><img src="assets/retro/fbneo-captcomm.jpg" aria-hidden="true" alt="Captain Commando" loading="lazy" decoding="async"><img src="assets/retro/mame-mspacman.jpg" aria-hidden="true" alt="Ms. Pac-man" loading="lazy" decoding="async"></div>
+    </div>
+    <div class="retro-fams reveal">
+      <div class="retro-fam" style="--fam:#E5534B"><b>Nintendo</b><span>NES, Super Nintendo, Nintendo 64, Game Boy, GBA, DS e 3DS</span></div>
+      <div class="retro-fam" style="--fam:#3D8BFF"><b>Sega</b><span>Master System, Mega Drive, Mega CD, 32X, Game Gear e Dreamcast</span></div>
+      <div class="retro-fam" style="--fam:#F2A93B"><b>Fliperama</b><span>Arcade, MAME, Neo Geo, Final Burn e os jogos de pistola</span></div>
+      <div class="retro-fam" style="--fam:#8C7BFF"><b>PlayStation 1</b><span>Os clássicos do primeiro PlayStation</span></div>
+      <div class="retro-fam" style="--fam:#3FBF8F"><b>Atari e outros</b><span>Atari, PC Engine, 3DO, MSX, Neo Geo Pocket, WonderSwan e mais</span></div>
+    </div>
+    <p class="retro-note reveal">Escolha o console, escolha o jogo e jogue. <strong>O LJ Gaming baixa e configura tudo sozinho.</strong></p>
+  </div>
+</section>
+
+<!-- ===================== BIBLIOTECA ===================== -->
+<!-- Lista tirada do catalogo real do launcher (src/data/linkedGames.ts do
+     projeto LJ Gaming) em 05/11/2026: 39 jogos. Jogo novo no launcher: some aqui
+     no JOGOS la embaixo, com a capa em assets/covers. -->
+<section class="sec" id="biblioteca">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Um pedaço da biblioteca</h2>
+      <p>Alguns dos jogos que já abrem no LJ Gaming. Toque no console para filtrar.</p>
+    </div>
+    <div id="disponibilidade">
+      <div class="av-chips reveal" id="av-chips"></div>
+      <div class="av-body reveal">
+        <div class="av-results">
+          <button class="av-arrow prev" id="av-prev" type="button" aria-label="Anterior">&#8249;</button>
+          <div class="av-track" id="av-track"></div>
+          <button class="av-arrow next" id="av-next" type="button" aria-label="Próximo">&#8250;</button>
+        </div>
+      </div>
+      <div class="flow reveal"><a href="#pricing" class="btn-ghost">Ver o preço</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FEEDBACKS ===================== -->
+<section class="sec" id="feedbacks">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>O que nossos clientes estão falando</h2>
+      <p>Quem já joga no LJ Gaming.</p>
+    </div>
+    <div class="qbx-rail reveal">
+      <div class="qbx-track" id="fbk-track">
+        <figure class="fbt-card">
+          <span class="fbt-stars" role="img" aria-label="5 de 5 estrelas">★★★★★</span>
+          <blockquote class="fbt-txt">Cara, o God of War 2 do PS2 rodando em 4K no meu monitor parece um remaster oficial! Zero dor de cabeça pra configurar controle de Xbox, só pluguei e joguei direto.</blockquote>
+          <figcaption class="fbt-autor">
+            <img src="assets/covers/god-of-war-2.jpg" alt="" loading="lazy">
+            <span><span class="fbt-nome">Matheus Ribeiro</span><span class="fbt-cidade">São Paulo, SP</span></span>
+          </figcaption>
+        </figure>
+        <figure class="fbt-card">
+          <span class="fbt-stars" role="img" aria-label="5 de 5 estrelas">★★★★★</span>
+          <blockquote class="fbt-txt">Eu já tinha desistido de jogar The Last of Us de PS3 no PC porque configurar emulador sozinho é um parto. No LJ Gaming dei 1 clique e abriu lisinho a 60 quadros. Valeu cada centavo!</blockquote>
+          <figcaption class="fbt-autor">
+            <img src="assets/covers/the-last-of-us-ps3.jpg" alt="" loading="lazy">
+            <span><span class="fbt-nome">Lucas Silva</span><span class="fbt-cidade">Belo Horizonte, MG</span></span>
+          </figcaption>
+        </figure>
+        <figure class="fbt-card">
+          <span class="fbt-stars" role="img" aria-label="5 de 5 estrelas">★★★★★</span>
+          <blockquote class="fbt-txt">A parte de Xbox 360 é um absurdo. Voltei a jogar Forza Horizon e Skate 3 com os amigos sem precisar ligar console antigo cheio de poeira. A interface estilo console é surreal.</blockquote>
+          <figcaption class="fbt-autor">
+            <img src="assets/covers/skate-3-xbox-360.jpg" alt="" loading="lazy">
+            <span><span class="fbt-nome">Rodrigo Almeida</span><span class="fbt-cidade">Curitiba, PR</span></span>
+          </figcaption>
+        </figure>
+        <figure class="fbt-card">
+          <span class="fbt-stars" role="img" aria-label="5 de 5 estrelas">★★★★★</span>
+          <blockquote class="fbt-txt">Comprei no PIX e em menos de 10 segundos a chave já tava liberada na tela. O launcher é super leve e muito bem feito. Suporte nota 10 no WhatsApp.</blockquote>
+          <figcaption class="fbt-autor">
+            <img src="assets/marca/ljgaming-favicon.svg" alt="" loading="lazy">
+            <span><span class="fbt-nome">Gabriel Santos</span><span class="fbt-cidade">Rio de Janeiro, RJ</span></span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="fbk-ctl reveal">
+      <button class="fbk-seta" id="fbk-prev" type="button" aria-label="Depoimento anterior">&#8249;</button>
+      <span class="fbk-cont" id="fbk-cont" aria-live="polite">1 de 4 depoimentos</span>
+      <button class="fbk-seta" id="fbk-next" type="button" aria-label="Próximo depoimento">&#8250;</button>
+    </div>
+    <div class="flow reveal"><a href="#pricing" class="btn-ghost">Ver o preço</a></div>
+  </div>
+</section>
+
+<!-- ===================== EMULAR SOZINHO x LJ GAMING ===================== -->
+<section class="sec" id="comparacao">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Emular sozinho ou usar o LJ Gaming</h2>
+      <p>O jogo é o mesmo. O que muda é tudo o que você precisa fazer até ele abrir.</p>
+    </div>
+    <div class="vs reveal">
+      <div class="vs-col bad">
+        <div class="vs-hd">
+          <svg viewBox="0 0 24 24"><path d="M12 3l9 16H3l9-16z"/><path d="M12 10v4M12 17.5v.01"/></svg>
+          Emulando sozinho
+        </div>
+        <ul class="vs-list">
+          <li>Garimpar sites de ROM cheios de anúncio, vírus e link quebrado</li>
+          <li>Caçar BIOS e plugins e seguir um tutorial longo para cada emulador</li>
+          <li>Botões trocados e vibração que não funciona</li>
+          <li>Tela preta, erro de plugin e áudio picotando</li>
+          <li>Save corrompido e horas de jogo perdidas</li>
+        </ul>
+      </div>
+      <div class="vs-col good">
+        <div class="vs-hd">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          Com o LJ Gaming
+        </div>
+        <ul class="vs-list">
+          <li>Escolher o jogo pela capa, dentro do launcher</li>
+          <li>Emulador, BIOS e ajustes já vêm prontos</li>
+          <li>Xbox, DualSense, DualShock 4 e USB funcionam ao conectar</li>
+          <li>Até 4K a 60 FPS, ajustado para o seu PC</li>
+          <li>Memory cards ilimitados com save automático</li>
+          <li>Suporte e 30 dias de garantia</li>
+        </ul>
+      </div>
+    </div>
+    <div class="flow reveal"><a href="#pricing" class="btn-ghost">Ver o preço</a></div>
+  </div>
+</section>
+
+<!-- ===================== PASSO A PASSO ===================== -->
+<section class="sec" id="passos">
+  <div class="wrap">
+    <div class="sec-head reveal"><h2>Do PIX à primeira partida</h2></div>
+    <div class="steps reveal">
+      <div class="step">
+        <div class="step-n num">1</div>
+        <h3>Pague no PIX</h3>
+        <p>Assim que o pagamento é confirmado, sua chave de ativação aparece na tela e chega no seu e-mail.</p>
+      </div>
+      <div class="step">
+        <div class="step-n num">2</div>
+        <h3>Instale e ative</h3>
+        <p>Baixe o LJ Gaming para Windows, abra e cole a chave. Os seis consoles e os jogos retrô são liberados na hora.</p>
+      </div>
+      <div class="step">
+        <div class="step-n num">3</div>
+        <h3>Escolha um jogo e jogue</h3>
+        <p>Clique na capa. O LJ Gaming baixa, configura e abre o jogo em tela cheia. É só pegar o controle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== OFERTA ===================== -->
+<section class="sec" id="pricing">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Um pagamento e tudo isso é seu</h2>
+      <p>Pagamento único. Sem mensalidade e sem renovação.</p>
+    </div>
+    <div class="eds reveal">
+      <div class="offer-card featured">
+        <div class="ed-ribbon">Acesso vitalício</div>
+        <div class="ed-top">
+          <div class="ed-name">LJ Gaming<small>6 consoles + mais de 5.700 jogos retrô</small></div>
+        </div>
+        <div class="ed-body">
+          <div class="ed-cons">
+            <span>PlayStation 2</span><span>PlayStation 3</span><span>PlayStation 4</span>
+            <span>Xbox</span><span>Xbox 360</span><span>Xbox One</span>
+            <span>+ 45 sistemas retrô</span>
+          </div>
+          <ul class="offer-features">
+            <li>Clique na capa e jogue: o LJ Gaming baixa, instala e abre o jogo sozinho</li>
+            <li>Imagem até 4K a 60 FPS, conforme o seu PC</li>
+            <li>Controles de Xbox, PlayStation, Switch e USB</li>
+            <li>Memory cards ilimitados com save automático</li>
+            <li>Downloads rápidos, sem anúncio e sem site duvidoso</li>
+            <li><strong>Mais de 5.700 jogos retrô</strong>: Super Nintendo, Mega Drive, N64, fliperama e mais</li>
+            <li><strong>Jogos novos</strong> adicionados sem custo extra</li>
+            <li>Suporte por WhatsApp e Discord</li>
+          </ul>
+        </div>
+        <div class="ed-buy">
+          <div class="ed-gain">
+            Os seis consoles usados custariam <b>R$ 5.450</b>. Aqui você paga uma vez só.
+          </div>
+          <div class="ed-price-row">
+            <span class="ed-price">
+              <span class="ed-new num">R$ 69,97</span>
+            </span>
+          </div>
+          <div class="ed-alert">Preço de lançamento: o valor vai subir em breve.</div>
+          <a href="https://ggcheckout.app/checkout/v5/PREENCHER-CHECKOUT-LJ"
+             onclick="checkout('https://ggcheckout.app/checkout/v5/PREENCHER-CHECKOUT-LJ',69.97);return false;"
+             class="offer-btn">Comprar o LJ Gaming</a>
+          <div class="offer-methods">Pagamento no PIX</div>
+          <div class="offer-trust"><strong>Chave na hora</strong> e 30 dias de garantia</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GARANTIA + FAQ ===================== -->
+<section class="sec" id="faq">
+  <div class="wrap faq-wrap">
+    <div class="gr">
+      <div class="gr-card reveal">
+        <div class="gr-badge">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <h3>30 dias pra testar sem risco</h3>
+        <p>Use o LJ Gaming por 30 dias. Se não rodar bem no seu PC ou você simplesmente não gostar, mande uma mensagem e devolvemos 100% do valor.</p>
+      </div>
+    </div>
+    <div class="sec-head reveal"><h2>Perguntas frequentes</h2></div>
+    <div class="faq-list" id="fl"></div>
+  </div>
+</section>
+</main>
+
+<!-- ===================== RODAPE ===================== -->
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div>
+      <div class="foot-brand"><img src="assets/marca/ljgaming-horizontal-preto.svg" alt="LJ Gaming"></div>
+      <p style="margin-top:8px">Suporte pelo WhatsApp e Discord. Pagamento por PIX.</p>
+      <div class="foot-links"><a href="https://ljgaming-license-service.onrender.com/membros">Área de membros</a><a href="#faq">Dúvidas</a></div>
+    </div>
+    <p style="max-width:420px">
+      LJ Gaming é um launcher independente de jogos para PC. PlayStation, PS2, PS3 e PS4 são marcas registradas da Sony Interactive Entertainment. Xbox, Xbox 360 e Xbox One são marcas registradas da Microsoft Corporation. Todas as marcas pertencem aos seus donos.
+    </p>
+  </div>
+</footer>
+
+<a id="sticky-cta" href="#pricing" role="button" aria-label="Ver a oferta">Comprar o LJ Gaming por R$ 69,97</a>
+
+<script>
+/* ---------- capas (topo e biblioteca) ---------- */
+var C='assets/covers/';
+var DESTAQUES=[
+  ['God of War II','PlayStation 2','god-of-war-2.jpg'],
+  ['The Last of Us','PlayStation 3','the-last-of-us-ps3.jpg'],
+  ['Dragon Ball Z: Budokai Tenkaichi 3','PlayStation 2','dragon-ball-z-budokai-tenkaichi-3-ps2.jpg'],
+  ['Red Dead Redemption','Xbox 360','red-dead-redemption-xbox-360.jpg'],
+  ['GTA San Andreas','PlayStation 2','gta-san-andreas-ps2.jpg'],
+  ['Uncharted 2: Among Thieves','PlayStation 3','uncharted-2-among-thieves-ps3.jpg'],
+  ['Skate 3','Xbox 360','skate-3-xbox-360.jpg'],
+  ['Resident Evil 4','PlayStation 2','resident-evil-4-ps2.jpg'],
+  ['Devil May Cry 4','PlayStation 3','devil-may-cry-4-ps3.jpg'],
+  ['Midnight Club: Los Angeles','Xbox 360','midnight-club-los-angeles-xbox-360.jpg']
+];
+var JOGOS=[
+  ['Grand Theft Auto: Vice City','PS2','gta-vice-city-ps2.jpg'],
+  ['LEGO Batman 2: DC Super Heroes','PS3','lego-batman-2-ps3.jpg'],
+  ['Star Wars: Battlefront II','PS2','star-wars-battlefront-ii-ps2.jpg'],
+  ['Grand Theft Auto: Liberty City Stories','PS2','gta-liberty-city-stories-ps2.jpg'],
+  ['LEGO Star Wars II: The Original Trilogy','PS2','lego-star-wars-ii-ps2.jpg'],
+  ['LEGO Star Wars: The Video Game','PS2','lego-star-wars-ps2.jpg'],
+  ['God of War','PS2','god-of-war-1.jpg'],
+  ['God of War II','PS2','god-of-war-2.jpg'],
+  ['The Last of Us','PS3','the-last-of-us-ps3.jpg'],
+  ['Grand Theft Auto: San Andreas','PS2','gta-san-andreas-ps2.jpg'],
+  ['Red Dead Redemption','X360','red-dead-redemption-xbox-360.jpg'],
+  ['Dragon Ball Z: Budokai Tenkaichi 3','PS2','dragon-ball-z-budokai-tenkaichi-3-ps2.jpg'],
+  ['Grand Theft Auto V','PS3','grand-theft-auto-v-ps3.jpg'],
+  ['Uncharted 2: Among Thieves','PS3','uncharted-2-among-thieves-ps3.jpg'],
+  ['Skate 3','X360','skate-3-xbox-360.jpg'],
+  ['Resident Evil 4','PS2','resident-evil-4-ps2.jpg'],
+  ['Call of Duty: Modern Warfare 2','PS3','call-of-duty-modern-warfare-2-ps3.jpg'],
+  ['Need for Speed: Most Wanted','PS2','need-for-speed-most-wanted-ps2.jpg'],
+  ['Midnight Club: Los Angeles','X360','midnight-club-los-angeles-xbox-360.jpg'],
+  ['Devil May Cry 4','PS3','devil-may-cry-4-ps3.jpg'],
+  ['Bully','PS2','bully-ps2.jpg'],
+  ['Mortal Kombat Komplete Edition','PS3','mortal-kombat-komplete-edition-ps3.jpg'],
+  ['Mortal Kombat: Shaolin Monks','PS2','mortal-kombat-shaolin-monks-ps2.jpg'],
+  ['Tekken 6','PS3','tekken-6-ps3.jpg'],
+  ['Need for Speed: Underground 2','PS2','nfs-underground-2.webp'],
+  ['Call of Duty: Black Ops III','PS3','call-of-duty-black-ops-iii-ps3.jpg'],
+  ['Resident Evil 5','PS3','resident-evil-5-ps3.jpg'],
+  ['BLACK','PS2','black-ps2.jpg'],
+  ['Minecraft: PlayStation 3 Edition','PS3','minecraft-ps3.jpg'],
+  ['Naruto Shippuden: Ultimate Ninja 5','PS2','naruto-shippuden-ultimate-ninja-5-ps2.jpg'],
+  ['Naruto Shippuden: Ultimate Ninja 4','PS2','naruto-shippuden-ultimate-ninja-4-ps2.jpg'],
+  ['Naruto: Ultimate Ninja 3','PS2','naruto-ultimate-ninja-3-ps2.jpg'],
+  ['Dragon Ball Z: Infinite World','PS2','dragon-ball-z-infinite-world-ps2.jpg'],
+  ['Pro Evolution Soccer 2011','PS2','pes-2011-ps2.jpg'],
+  ['PES 2013','PS3','pes-2013-ps3.jpg'],
+  ['FIFA Street 2','PS2','fifa-street-2-ps2.jpg'],
+  ['FIFA Street 3','PS3','fifa-street-3-ps3.jpg'],
+  ['Call of Duty 3: Special Edition','PS2','call-of-duty-3-ps2.jpg'],
+  ['WWE SmackDown! Here Comes the Pain','PS2','wwe-smackdown-here-comes-the-pain-ps2.jpg']
+];
+var NOME_CONSOLE={PS2:'PlayStation 2',PS3:'PlayStation 3',X360:'Xbox 360'};
+
+/* ---------- topo: arte que troca sozinha ---------- */
+(function(){
+  var stage=document.getElementById('art-stage'), th=document.getElementById('art-thumbs');
+  if(!stage) return;
+  stage.innerHTML=DESTAQUES.map(function(g,i){
+    var src=C+g[2], a=i? 'data-src':'src';
+    return '<div class="art-slide'+(i?'':' on')+'" data-tag="'+g[1]+'">'
+      +'<img class="art-bg" '+a+'="'+src+'" alt="" aria-hidden="true">'
+      +'<img class="art-box" '+a+'="'+src+'" alt="'+g[0]+'"'+(i?'':' fetchpriority="high"')+' decoding="async">'
+      +'</div>';
+  }).join('')+'<div class="art-cap"><span class="art-cap-name" id="art-name">'+DESTAQUES[0][0]+'</span><span class="art-cap-tag" id="art-tag">'+DESTAQUES[0][1]+'</span></div>';
+  th.innerHTML=DESTAQUES.map(function(g,i){
+    return '<div class="art-thumb'+(i?'':' on')+'" data-i="'+i+'"><img src="'+C+g[2]+'" alt="'+g[0]+'" loading="lazy"></div>';
+  }).join('');
+  var slides=[].slice.call(stage.querySelectorAll('.art-slide')), thumbs=[].slice.call(th.querySelectorAll('.art-thumb'));
+  var nome=document.getElementById('art-name'), tag=document.getElementById('art-tag'), i=0, t=null;
+  function carrega(k){ slides[k].querySelectorAll('img[data-src]').forEach(function(im){ im.src=im.getAttribute('data-src'); im.removeAttribute('data-src'); }); }
+  function show(k){
+    carrega(k);
+    slides[i].classList.remove('on'); thumbs[i].classList.remove('on');
+    i=k; slides[i].classList.add('on'); thumbs[i].classList.add('on');
+    nome.textContent=DESTAQUES[i][0]; tag.textContent=DESTAQUES[i][1];
+    carrega((i+1)%slides.length);
+  }
+  function play(){ stop(); t=setInterval(function(){ show((i+1)%slides.length); },5000); }
+  function stop(){ if(t) clearInterval(t); t=null; }
+  thumbs.forEach(function(el){ el.addEventListener('click',function(){ show(+el.getAttribute('data-i')); play(); }); });
+  document.addEventListener('visibilitychange',function(){ document.hidden?stop():play(); });
+  carrega(1); play();
+})();
+
+/* ---------- biblioteca com filtro por console ---------- */
+(function(){
+  var chips=document.getElementById('av-chips'), tr=document.getElementById('av-track');
+  var prev=document.getElementById('av-prev'), next=document.getElementById('av-next');
+  if(!chips||!tr) return;
+  var CATS=[['all','Todos'],['PS2','PlayStation 2'],['PS3','PlayStation 3'],['X360','Xbox 360']], ativo='all';
+  function render(){
+    chips.innerHTML=CATS.map(function(c){ return '<button class="av-chip'+(c[0]===ativo?' active':'')+'" type="button" data-cat="'+c[0]+'">'+c[1]+'</button>'; }).join('');
+    tr.innerHTML=JOGOS.filter(function(g){ return ativo==='all'||g[1]===ativo; }).map(function(g){
+      return '<div class="av-card">'
+        +'<img class="av-card-img box" src="'+C+g[2]+'" alt="'+g[0]+'" loading="lazy" decoding="async">'
+        +'<div class="av-card-body"><div class="av-card-name" title="'+g[0]+'">'+g[0]+'</div>'
+        +'<div class="av-tags"><span class="av-tag ok">Disponível</span></div>'
+        +'<div class="av-card-foot"><span class="av-card-plat">'+NOME_CONSOLE[g[1]]+'</span></div></div></div>';
+    }).join('');
+    tr.scrollLeft=0; setas();
+  }
+  function setas(){ var max=tr.scrollWidth-tr.clientWidth; if(prev) prev.disabled=tr.scrollLeft<=4; if(next) next.disabled=tr.scrollLeft>=max-4; }
+  function passo(){ return Math.max(200, tr.clientWidth*.8); }
+  chips.addEventListener('click',function(e){ var b=e.target.closest('.av-chip'); if(!b) return; ativo=b.getAttribute('data-cat'); render(); });
+  if(prev) prev.addEventListener('click',function(){ tr.scrollBy({left:-passo(),behavior:'smooth'}); });
+  if(next) next.addEventListener('click',function(){ tr.scrollBy({left:passo(),behavior:'smooth'}); });
+  tr.addEventListener('scroll',setas,{passive:true}); window.addEventListener('resize',setas);
+  render();
+})();
+
+/* ---------- depoimentos: setas e contador ---------- */
+(function(){
+  var tr=document.getElementById('fbk-track'), prev=document.getElementById('fbk-prev'), next=document.getElementById('fbk-next'), cont=document.getElementById('fbk-cont');
+  if(!tr) return;
+  var n=tr.children.length;
+  function passo(){ var c=tr.firstElementChild; return c? c.getBoundingClientRect().width+14 : 300; }
+  function atual(){ var max=tr.scrollWidth-tr.clientWidth; if(tr.scrollLeft>=max-4) return n-1; return Math.max(0,Math.min(n-1,Math.round(tr.scrollLeft/passo()))); }
+  function setas(){ var max=tr.scrollWidth-tr.clientWidth; prev.disabled=tr.scrollLeft<=4; next.disabled=tr.scrollLeft>=max-4; cont.innerHTML='<b>'+(atual()+1)+'</b> de '+n+' depoimentos'; }
+  prev.addEventListener('click',function(){ tr.scrollBy({left:-passo(),behavior:'smooth'}); });
+  next.addEventListener('click',function(){ tr.scrollBy({left:passo(),behavior:'smooth'}); });
+  tr.addEventListener('scroll',setas,{passive:true}); window.addEventListener('resize',setas); setas();
+})();
+
+/* ---------- FAQ ---------- */
+(function(){
+  var F=[
+    ['Quais consoles vêm no LJ Gaming?','Seis: PlayStation 2, PlayStation 3, PlayStation 4, Xbox, Xbox 360 e Xbox One. Todos já configurados, cada um na sua aba do launcher.'],
+    ['Meu PC precisa ser potente?','Para PS2 e Xbox, quase qualquer computador ou notebook dos últimos 10 anos roda bem. Para PS3 e Xbox 360, recomendamos um processador de 4 núcleos e uma placa de vídeo a partir de GTX 1050 ou RX 570. O LJ Gaming detecta o seu PC e ajusta a imagem sozinho.'],
+    ['Preciso baixar BIOS, plugins ou configurar emulador?','Não. BIOS, plugins de vídeo, áudio e testes de compatibilidade já vêm prontos. Você só clica no jogo.'],
+    ['Funciona com controle de Xbox, PS4 ou PS5?','Sim. Controles de Xbox, DualShock 4, DualSense, Nintendo Switch e genéricos USB ou Bluetooth são reconhecidos ao conectar, com botões e vibração já mapeados. Também dá para jogar no teclado e mouse.'],
+    ['Como recebo a minha chave depois de pagar?','Quando o PIX é confirmado, o que leva de 10 a 30 segundos, sua chave de ativação aparece na tela e chega no seu e-mail. Com ela, você baixa o instalador na área de membros e ativa o launcher.'],
+    ['É só R$ 69,97 mesmo ou tem mensalidade?','É só R$ 69,97, uma vez. Não tem mensalidade, anuidade nem renovação, e os jogos novos que entrarem também são seus.'],
+    ['E se eu não gostar ou não rodar no meu PC?','Você tem 30 dias de garantia. Peça o reembolso pelo suporte e devolvemos 100% do valor.'],
+    ['Como funciona o suporte?','Nossa equipe ajuda pelo WhatsApp e pelo Discord.']
+  ];
+  var fl=document.getElementById('fl');
+  fl.innerHTML=F.map(function(f){ return '<div class="faq-item reveal"><button class="faq-q" type="button" onclick="tFaq(this)">'+f[0]+'<span class="faq-chev">▼</span></button><div class="faq-a">'+f[1]+'</div></div>'; }).join('');
+})();
+function tFaq(b){var a=b.nextElementSibling,o=b.classList.contains('open');document.querySelectorAll('.faq-q.open').forEach(function(q){q.classList.remove('open');q.nextElementSibling.classList.remove('open')});if(!o){b.classList.add('open');a.classList.add('open')}}
+
+/* ---------- reveal ---------- */
+document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+/* ---------- CTA fixo no celular: some quando a oferta aparece ---------- */
+(function(){
+  var cta=document.getElementById('sticky-cta'), pr=document.getElementById('pricing');
+  if(!cta||!pr) return;
+  function upd(){
+    var y=window.scrollY||document.documentElement.scrollTop, r=pr.getBoundingClientRect();
+    var naOferta=r.top<window.innerHeight*.85 && r.bottom>0;
+    cta.classList.toggle('on', y>450 && !naOferta);
+  }
+  window.addEventListener('scroll',upd,{passive:true}); window.addEventListener('resize',upd); upd();
+})();
+
+/* ---------- checkout ---------- */
+function checkout(url, val){
+  if(!url) url='https://ggcheckout.app/checkout/v5/PREENCHER-CHECKOUT-LJ';
+  if(!val) val=69.97;
+  try { if(window.fbq) fbq('track','InitiateCheckout',{value:val,currency:'BRL'}); } catch(e){}
+  window.location.href=url;
+}
+</script>
+</body>
+</html>
