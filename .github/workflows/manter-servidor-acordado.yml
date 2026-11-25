@@ -1,4 +1,4 @@
-# Mantém o servidor de licenças do LJ Gaming acordado.
+# Mantém o servidor de licenças do LJ BOX acordado.
 # No plano grátis do Render o servidor "dorme" após ~15 min sem uso e leva 20-50 s para acordar;
 # o launcher desiste antes disso e a ativação da key dá erro. Este alarme chama o servidor a cada 10 min.
 name: Manter servidor acordado

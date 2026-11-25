@@ -1,4 +1,4 @@
-# LJ Gaming — página de vendas
+# LJ BOX — página de vendas
 
 Site estático (sem servidor) publicado pelo GitHub Pages. Fica fora do Render para o tráfego dos anúncios não gastar banda do servidor de licenças.
 
